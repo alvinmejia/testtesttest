@@ -1,0 +1,1 @@
+.main-container .kable-table .table>tbody>tr:nth-child(n+1001){ display: none; }

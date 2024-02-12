@@ -1,0 +1,1102 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title></title>
+
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="libs/navigation-1.1/tabsets.js"></script>
+<script src="libs/navigation-1.1/codefolding.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densityDpi=device-dpi" />
+<meta name="format-detection" content="telephone=no" />
+<script src="libs/exploratory/resources/d3.min.js?cb=cb1707719826273"></script>
+<script src="libs/exploratory/resources/viz.min.js?cb=cb1707719826273"></script>
+<script src="libs/exploratory/resources/chroma.min.js?cb=cb1707719826273"></script>
+<script src="libs/exploratory/resources/showdown.min.js?cb=cb1707719826273"></script>
+<script src="libs/exploratory/resources/jquery.balloon.min.js?cb=cb1707719826273"></script>
+<link href="libs/exploratory/resources/viz-base.css?cb=cb1707719826273" rel="stylesheet"></link>
+<script src="libs/exploratory/resources/plotly.min.js?cb=cb1707719826273"></script>
+<script src="libs/exploratory/resources/plotly-locale-ja.js?cb=cb1707719826273"></script>
+<link href="libs/exploratory/resources/plotly-custom.css?cb=cb1707719826273" rel="stylesheet"></link>
+<script src="libs/exploratory\layout\ftF3Wqf4.js"></script>
+
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="libs/exploratory/resources/note-base.css?cb=20240212T063706068Z" type="text/css" />
+<link rel="stylesheet" href="libs/exploratory/resources/microtip.css?cb=20240212T063706068Z" type="text/css" />
+<link rel="stylesheet" href="libs/exploratory/resources/note-mobile.css?cb=20240212T063706068Z" type="text/css" />
+<link rel="stylesheet" href="libs/exploratory/resources/note-df-table-max-100.css?cb=20240212T063706068Z" type="text/css" />
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+<style type="text/css">
+.code-folding-btn { margin-bottom: 4px; }
+</style>
+<script>
+$(document).ready(function () {
+  window.initializeCodeFolding("hide" === "show");
+});
+</script>
+
+
+
+
+
+<style type="text/css">
+/* Styles for plain html output with a single column layout, which is 
+   either no TOC or no-floating TOC case.  */ 
+.main-container {
+  max-width: 770px!important; /* it overrides 940px hardcoded by rmarkdown. 700px + padding left/right */
+  padding-left:30px;
+  padding-right:40px;
+}
+/* Style for non-floating TOC */
+#TOC {
+  border-radius: 6px;
+  padding-left: 18px;
+  padding-top: 12px;
+}
+#TOC ul {
+  padding-left:0;
+}
+#TOC ul > li {
+  list-style-type: none;
+  margin: 0px 0px 0px 0px;
+  padding: 5px 5px 5px 15px;
+  border: none;
+}
+#TOC ul > li > a {
+  font-size: 14px;
+  color: #444659;
+  text-decoration: none;
+}
+
+</style>
+
+<div class="fluid-row" id="header">
+
+<div class="btn-group pull-right">
+<button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
+<ul class="dropdown-menu" style="min-width: 50px;">
+<li><a id="rmd-show-all-code" href="#">Show All Code</a></li>
+<li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li>
+</ul>
+</div>
+
+
+
+
+</div>
+
+
+<script data-id="viz_1" data-object-name="viz_ftF3Wqf4" data-viz="ftF3Wqf4" data-height="100%" data-width="full" data-fit="" data-border="" ></script><div data-id="viz_1" style="width:100%; height:400px; display:table;margin-bottom:38px" class="viz-rendering-error viz-loading"><div style="width:100%; height:100%; display:table-cell; vertical-align:middle; text-align:center; font-size:14px; color:#999; background-color:white;font-family:sans-serif "><div>Loading... </div></div></div>
+<p>fea</p>
+
+<!-- BEGIN: Exploratory custom footer -->
+<dialog id="download-img-modal">
+  <form method="dialog">
+    <div class="download-img-modal-title" data-label="Export Chart Image">Export Chart Image</div>
+    <div class="download-img-modal-body">
+      <div class="label-row" data-label="Output Format">
+        Output Format
+      </div>
+      <div class="value-row">
+        <input type="radio" name="download-img-type" id="download-img-type-png" value="png" checked/><span class="radio-label">PNG</span>
+        <input type="radio" name="download-img-type" id="download-img-type-svg" value="svg"/><span class="radio-label">SVG</span>
+      </div>
+      <div class="label-row" data-label="Background">
+        Background
+      </div>
+      <div class="value-row">
+        <input type="checkbox" id="download-img-transparent"/>
+        <span class="cb-label" data-label="Set background transparent">Set background transparent</span>
+      </div>
+      <div class="label-row" data-label="Size">
+        Size
+      </div>
+      <div class="value-row">
+        <div class="size-box">
+          <div class="sub-label-row" data-label="Width (Pixel)">Width (Pixel)</div>
+          <div><input id="download-img-width" type="number" value="" placeholder="1200"/></div>
+        </div>
+        <div class="size-box">
+          <div class="sub-label-row" data-label="Height (Pixel)">Height (Pixel)</div>
+          <div><input id="download-img-height" type="number" value="" placeholder="800" /></div>
+        </div>
+        <div class="size-box-small">
+          <div class="sub-label-row">
+            <span data-label="Pixel Ratio">Pixel Ratio</span>
+            <span data-toggle-id="pixel-ratio-hint-toggle-btn" class="pixel-ratio-hint-toggle-btn" aria-label="Pixel Ratio Hint" data-microtip-position="top-left" role="tooltip"></span>
+          </div>          
+          <div>
+            <select id="download-img-ratio">
+              <option value="1">100%</option>
+              <option value="1.5">150%</option>
+              <option value="2">200%</option>
+              <option value="2.5">250%</option>
+              <option value="3" selected>300%</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="download-img-modal-footer">
+      <button id="download-img-ok-btn" value="default" data-label="Export">Export</button>
+      <button id="download-img-cancel-btn" value="cancel" data-label="Cancel">Cancel</button>
+    </div>
+  </form>
+</dialog>
+
+<script>
+
+var FULL_WIDTH_MARGIN_SIDE = 60;
+var $body = $(document.body);
+var screenWidth = $body.width();
+var openOnDesktop = window.location.href.indexOf("desktop=true") > -1; 
+var openInLocal = window.location.href.startsWith("file:"); 
+var enableChartDataDownload = !openInLocal && !openOnDesktop && window.parent && window.parent.document && !!window.parent.document.querySelector('input#enable-csv-download');
+var enableChartImageDownload = !openInLocal && !openOnDesktop;
+if (openOnDesktop) { // enable chart data/image download on desktop.
+ enableChartDataDownload = true;
+ enableChartImageDownload = true;
+}
+
+// Translate the chart image download dialog.
+var lang = document.documentElement.lang || null;
+if (lang) {
+  // Translate span/div with "data-label" attr.
+  var labels = document.querySelectorAll("#download-img-modal [data-label]");
+  labels.forEach(function(l) {
+    l.innerText = VizUtil.getMessage(lang, l.dataset.label);
+  });
+  // Translate aria-label.
+  labels = document.querySelectorAll("#download-img-modal [aria-label]");
+  labels.forEach(function(l) {
+    l.setAttribute("aria-label", VizUtil.getMessage(lang, l.getAttribute("aria-label")));
+  });
+}
+// Add event to the ok button in the chart image download dialog.
+$("#download-img-ok-btn").on("click", function(ev){
+  var id = this.dataset.id;
+  var objectName = this.dataset.objectName;
+  var vizName = this.dataset.vizName;
+  var chartTitleForDownload = this.dataset.chartTitleForDownload;
+  var format = $("#download-img-type-png").is(":checked") ? "png" : "svg";
+  var useTransparentBackground = $("#download-img-transparent").is(":checked");
+  var width = $("#download-img-width").val();
+  var height = $("#download-img-height").val();
+  var scale = $("#download-img-ratio").find(":selected").val();
+  var _downloadSnapshotCb = function(datauri, id, objectName, vizName) {
+    try {
+      var _a = document.createElement('a');
+      _a.style.display = 'none';
+      _a.style.position= 'absolute';
+      _a.href = datauri;
+      // the filename you want
+      _a.download = chartTitleForDownload + '.' + format;
+      document.body.appendChild(_a);
+      _a.click();
+    } catch(e) {
+      console.log("Downloading chart image failed: ",e.message, id, objectName, vizName);
+    }
+  }
+  if (id && objectName && vizName) {
+    _generateSnapshot(id, objectName, vizName, _downloadSnapshotCb, format, useTransparentBackground, width, height, scale);
+  }
+});
+
+// Images with width="full" setting.
+// If the screen width is smaller than 768px, TOC shows up at the top 
+// and text content shows in full width so just set 100% for width. 
+// Otherwise, stretch the image. 
+$('img[width="full"]').each(function() {
+  var $elem = $(this);
+  if (screenWidth > 768) {
+    $elem.attr("width", "");  // remove "full"
+    var elemOffsetLeft = $elem.offset().left;
+    $elem.css({"width": (screenWidth - (FULL_WIDTH_MARGIN_SIDE*2) )+'px', "max-width": (screenWidth - (FULL_WIDTH_MARGIN_SIDE*2) )+'px', "margin-left": (-1 *(elemOffsetLeft - FULL_WIDTH_MARGIN_SIDE)) + "px" });
+  } else {
+    $elem.attr("width", "100%"); // replace "full" with "100%"
+  }
+});
+// Images with class="full" setting.
+$('img.full').each(function() {
+  var $elem = $(this);
+  if (screenWidth > 768) {
+    $elem.attr("width", "");  // remove "full"
+    var elemOffsetLeft = $elem.offset().left;
+    $elem.css({"width": (screenWidth) +'px', "max-width": (screenWidth) +'px', "margin-left": (-1 *(elemOffsetLeft)) + "px" });
+  } else {
+    $elem.attr("width", "100%"); // replace "full" with "100%"
+  }
+});
+
+$('a').each(function(index, a){
+  var $link = $(this);
+  // Exclude links starting with "file". (Tabs)
+  // Exclude links starting with "#". (Footnotes)
+  if($link.attr('href') && !$link.attr('href').startsWith('file') && !$link.attr('href').startsWith('#')){
+    $link.attr('target','_blank'); // make sure link opens another tab or window.
+  }
+});
+
+var _enableLinks = function() {
+  if (!openOnDesktop) {
+    return false;
+  }
+  $('a').each(function(index, a){
+    var $link = $(this);
+    // Enable links starting with http* and mailto. Others are used for 
+    // other purpose such as map, tab, etc so don't touch those. 
+    if($link.attr('href') && /^(http:\/\/|https:\/\/|mailto:)/.test($link.attr('href'))){
+      $link.off("click");
+      $link.on("click", function (e) {
+        e.preventDefault(); // make sure to block default to avoid external content rendered inside Exploratory Desktop.
+        window.parent.postMessage(JSON.stringify({action:'OpenExternalLink', url: $link.attr('href')}),'*');
+        //MarkdownActions.openExternalLink($link.attr('href'));
+      });
+    }
+  });
+};
+
+var onMessageReceiveHandler = function(event){
+  var data = null;   
+  try {
+    data = JSON.parse(event.data);
+  } catch(e) {
+    // The event.data may be just a text like 'ready'. 
+    // We ignore those cases. 
+  }
+  if (!data) {
+    return;
+  }
+  if(data.action) {
+    switch(data.action) {
+      case "ScrollY": {
+        var pageHeight = data.pageHeight;
+        var scrollY = data.scrollY;
+        var windowHeight = window.document.body.clientHeight;
+        // if page height passed from editor is longer or shorter than the viewer window height,
+        // adjust the scrollY using the ratio.
+        if (pageHeight && windowHeight !== pageHeight) {
+          scrollY = windowHeight * (scrollY / pageHeight);
+        }
+        window.scrollTo(0, scrollY);
+        break;
+      }
+      case "EnableLinks":
+        _enableLinks();
+        break;
+    }
+  }
+
+}
+window.addEventListener('message', onMessageReceiveHandler, false); 
+
+var ready = function(){
+  window.parent.postMessage(JSON.stringify({action:'DocumentReady'}),'*');
+}
+document.addEventListener("DOMContentLoaded", ready);
+
+</script>
+
+<script>
+
+
+// Find exploratory vizs. Check the existence of 'data-id' and 'data-viz' attributes. 
+var $vizs = $("script[data-id][data-viz]");
+// View area width. 
+var screenWidth = $(document.body).width();
+// View area height. 
+var screenHeight = $(window).height();
+
+// In case of shared note, the note is loaded in the iframe so the screen
+// height is shorter than the actual screen size so we need to adjust it.
+// Accessing the parent fails if you open it locally (including opening on desktop) 
+// because of the cross origin so just to check. 
+if (!/^file:/.test(window.location.href)) {
+  var offset = $(window.parent.document).find("iframe.markdown-content-frame").offset();
+  if (offset && offset.top) {
+    screenHeight+=offset.top;
+  }
+}
+
+
+// Capturing charts/analytics snapshot images for Word output and 
+// self-contained HTML output.  (self-contained HTML output is not used now.)
+var _generateSnapshot = function(id, objectName, vizName, cb, format, useTransparentBackground, width, height, scale) {
+  if (!cb) {
+    // Dummy callback.
+    cb = function() {};
+  }
+  var analyticsName = null;
+
+  var viz = window[objectName];
+  if (!window._datauris) 
+    window._datauris = {};
+      
+  // If it is analytics, find the viz metadata in analytics json.
+  if (/^analytics_/.test(id)) {
+    // If no corresponding metadata found, just return. 
+    if (!viz.vizs[vizName]) {
+      cb(null, id, objectName, vizName);
+      return;
+    }
+    analyticsName = viz.name;
+    viz = viz.vizs[vizName].metadata;
+  }
+
+  if (VizUtil.isPivot(viz.options.marker)) {
+      // do nothing.
+      cb(null, id, objectName, vizName);
+  } else if (VizUtil.isLeaflet(viz.options.marker)) {
+    var map = window._leaflet_map_objs[id];
+    var options = {
+      exclude: ['.leaflet-control-zoom', '.leaflet-control-attribution', '.info-box'],
+      format: 'image/png'
+    };
+    return map.export(options)
+    .then(function(res) {
+      window._datauris[id] = res ? res.data : "null";
+      cb(res ? res.data : null, id, objectName, vizName);
+      return null;
+    })
+    .catch(function(e){
+      window._datauris[id] = "null";
+      cb(null, id, objectName, vizName);
+    });
+  } else if (VizUtil.isROutput(viz.options.marker)) {
+    cb(null, id, objectName, vizName); 
+  } else if (VizUtil.isPlotly(viz.options.marker)) {
+    // plotly
+    var graphDiv = document.querySelector('div[data-id="div-'+id+'"] .js-plotly-plot');
+    var origw = graphDiv.clientWidth;
+    var origh = graphDiv.scrollHeight;
+    var _width = width || 1200; 
+    var _height = height || (graphDiv.scrollHeight > graphDiv.clientHeight ? _width * origh / origw : 800);
+    var _format = format || "png";
+    var _scale = scale || "2";
+    // Set the background color. 
+    graphDiv.layout.paper_bgcolor = useTransparentBackground ? 'rgba(255,255,255,0)' : 'rgba(255,255,255,1)';
+    graphDiv.layout.plot_bgcolor = useTransparentBackground ? 'rgba(255,255,255,0)' : 'rgba(255,255,255,1)';
+
+    return Plotly.toImage(graphDiv,  {format: _format, width: _width, height: _height, scale: _scale})
+    .then(function(res){
+      window._datauris[id] = !!res ? res : "null";
+      cb(res, id, objectName, vizName);
+      // Use the width/height/scale used in the last export.
+      // Save the width/height/scale for the next export.
+      if (window.localStorage) {
+        window.localStorage.setItem("exploratory.viz.width", width||null);
+        window.localStorage.setItem("exploratory.viz.height", height||null);
+        window.localStorage.setItem("exploratory.viz.scale", scale||null);
+      }
+    }) 
+    .catch(function(e){
+      window._datauris[id] = "null";
+      cb(null, id, objectName, vizName);
+    })
+    .finally(function(){
+      // Get back the background color white just in case. 
+      graphDiv.layout.paper_bgcolor = 'rgba(255,255,255,1)';
+      graphDiv.layout.plot_bgcolor = 'rgba(255,255,255,1)';
+    });
+  } else { // Shouldn't reach here, but just in case.
+    cb(null, id, objectName, vizName);
+  }
+};
+
+
+var _renderSingleViz = function($div, id, vizName, analyticsName, viz, minHeight) {
+  var lang = document.documentElement.lang || null;
+  var $parent = $div.parent();
+
+  // Show no data message if data is empty. 
+  // Some chart can render its own no data message so bypass for those cases. 
+  if (VizUtil.shouldRenderNoData(viz.options.data, viz.options)) {
+    // Show the query error message if available.
+    VizUtil.renderNoData($div[0], viz.options._lastQueryErrorMessage, null, null, lang);
+    // Mark it as rendered.
+    window._vizRenderingStatus[id] = true;    
+    return;
+  }
+  // Show detail handler on the server.
+  var onShowDetailCallback = null;
+  // Enable the show detail support on the following situations.
+  // - Running on the desktop.
+  // - Running on the server.
+  // We don't support the show detail on the locally exported markdown.
+  //
+  // Disable the show detail on analytics charts for now because the chart
+  // query is against the model output so it is hard to show the original data.
+  if (!analyticsName && (openOnDesktop || !openInLocal)) {
+      onShowDetailCallback = function(cdatalist) {
+        var filterCondition = VizUtil.constructFilterConditions(cdatalist, viz.options);
+        var _msg = {
+          action: 'ShowDetail',
+          condition: filterCondition,
+          dataframeName: viz.transformName,
+          marker: viz.options.marker,
+          columns: viz.options.columns,
+          vizName: viz.name,
+          vizDisplayName: viz.displayName,
+          preprocessor: viz.preprocessor
+        };
+        if (openOnDesktop) {
+          _msg = JSON.stringify(_msg);
+        }
+        window.parent.postMessage(_msg, '*');
+      };
+  }
+
+  if (VizUtil.isPivot(viz.options.marker)) {
+    // Render pivot table
+    PivotTableGenerator.render(viz.options, viz.options.data, $div[0],
+      null, null, lang, null, null, null, null, null, null, onShowDetailCallback);
+    // adjust height 
+    var pTitleHeight = $div.find('.pivot-title').outerHeight(true); 
+    if ($div.find('.pivot-title').hasClass("hidden")) {
+      pTitleHeight = 0;
+    }
+    var pColTitleHeight = $div.find('.pivot-col-title').outerHeight(true);
+    if ($div.find('.pivot-col-title').hasClass("hidden")) {
+      pColTitleHeight = 0;
+    }
+    var pToolbarHeight = $div.find('.pivot-toolbar').outerHeight(true);
+    if ($div.find('.pivot-toolbar').hasClass("hidden")) {
+      pToolbarHeight = 0;
+    }
+    var pHeaderHeight = $div.find('.pivot-table-frame.pivot-table-col-header-frame').outerHeight();
+    var pBodyHeight = $div.find('.pivot-table-frame.pivot-table-body-frame').outerHeight();
+    var horizScrollBarHeight = 18;
+    var pHeight = pTitleHeight + pColTitleHeight + pHeaderHeight + pToolbarHeight + pBodyHeight + horizScrollBarHeight;
+    //console.log(pTitleHeight + " " +pColTitleHeight + " " + pHeaderHeight + " " + pBodyHeight + " " + pHeight + " " + $div.height())
+    if (viz.options.marker==="singlevalue"){
+      $parent.css({'height':'120px', 'min-height':'120px'});
+    } else {
+      // Remove min-height for Table, Pivot, Summarize Table
+      $parent.css({"min-height":""});
+      // If the height is set to the div, adjust the height depending 
+      // on the table actual height and min height. 
+      // In case of "full" mode, there is no height set 
+      // in order to show all rows so just ignore it. 
+      if ($parent[0].style.height && minHeight) {
+        $parent.height(Math.min(pHeight, minHeight));
+      }
+    }
+
+  } else if (VizUtil.isLeaflet(viz.options.marker)) {
+    // For capturing the map zoom level update. 
+    var onMoveEndCallback = function(event){
+      if (openOnDesktop) {
+        var map = event ? event.target : null;
+        // if (map) {
+        //   console.log('mapZoomStatus', map.getZoom() + ',' + map.getCenter().lat + "," + map.getCenter().lng);
+        // }
+        // Send a message to the parent window. 
+        window.parent.postMessage(JSON.stringify({action:'MapMoved', id: (analyticsName ? analyticsName + ":::" : "") + vizName, data: {mapZoomStatus: map.getZoom() + ',' + map.getCenter().lat + "," + map.getCenter().lng}}),'*');
+      }
+    };
+    // Render leaflet map
+    switch (viz.options.marker) {
+      case 'map':
+      case 'maphmap':
+        $parent.parent().parent().css({"background-color":"#fff"});
+        MapGenerator.render(viz.options, viz.options.data, $div[0], 
+        null, null, null, null, onMoveEndCallback, null, null, lang, onShowDetailCallback);
+        break;
+      case 'geojson':
+        $parent.parent().parent().css({"background-color":"#fff"});
+        var geojsonObjectName = 'geojson_' + viz.options.geojson; 
+        MapGenerator.render(viz.options, viz.options.data, $div[0], window[geojsonObjectName],
+          null, null, null, onMoveEndCallback, null, null, lang, onShowDetailCallback);
+        break;
+      case 'easymap':
+        $parent.parent().parent().css({"background-color":"#fff"});
+        var geojsonObjectName = 'geojson_' + viz.options.easymapMap; 
+        MapGenerator.render(viz.options, viz.options.data, $div[0], window[geojsonObjectName],
+          null, null, null, onMoveEndCallback, null, null, lang, onShowDetailCallback);
+        break;
+      default:
+        break;
+    }
+  } else if (VizUtil.isROutput(viz.options.marker)) {
+    // Locate the image in center.
+    $parent.css({'text-align': 'center'});
+    // Render R output
+    ROutputGenerator.render(
+      viz.options, 
+      {"outputFile": [ (window._baseUrl ? window._baseUrl + "/note_content/" : "" ) + "libs/exploratory/layout_output/"+ (analyticsName ? analyticsName+"-" : "") + viz.name+".png"]}, 
+      $div[0], 
+      true,
+      null,
+      null,
+      lang
+    );
+  } else if (VizUtil.isPlotly(viz.options.marker)) {
+    // For capturing the option update on toolbar. 
+    var onPropUpdateCallback = function(key, value){
+      if (openOnDesktop && 
+        [
+          "facetFilter", "numFacetColumns", "facetSqueezePlots", "facetSyncXAxis", 
+          "facetSyncYAxis", "yErrHighLowEnabledOnUI", "labelOnPlot", "label2OnPlot", 
+          "colorValueOnPlot", "yAxisIncludeZero", "y2AxisIncludeZero"
+        ].includes(key)) {        // Send a message to the parent window. 
+        var payload = {};
+        payload[key] = value;
+        window.parent.postMessage(JSON.stringify({action:'ChartPropUpdated', id: (analyticsName ? analyticsName + ":::" : "") + vizName, data: payload}),'*');
+      }
+    };
+    // Show/Hide layout toolbar.
+    viz.options.showFacetLayoutTool = window["exploratory-hide-chart-toolbars"] ? "off" : "on";
+    // Render plotly graph
+    $parent.css({"overflow-y":"auto"});
+    PlotlyGraphGenerator.render(viz.options, viz.options.data, $div[0], true,
+      null, null, null, null, null, onShowDetailCallback, null,
+      onPropUpdateCallback, lang);
+  }
+};
+
+var _renderVizPanel = function() {
+  var lang = document.documentElement.lang || null;
+  var $elem = $(this); // This script tag
+  var id = $elem.attr("data-id");
+  var objectName = $elem.attr("data-object-name");
+  // Hide loading placeholer
+  // It could match multiple elements if there are same charts.
+  $('.viz-loading[data-id="'+id+'"]').hide();
+  // Backward compatibility. The rmarkdown renders the old cached data if available.
+  $('.viz-rendering-error[id="loading-'+id+'"]').hide();
+  
+  var viz = window[objectName];
+  var vizName = $elem.attr("data-viz");
+  var analyticsName = null;
+  var annotation = viz.annotation;
+  // Check both viz.displayName and viz.options.displayName 
+  // for the backward compatibility.
+  var vizDisplayName = viz.displayName || viz.options.displayName;
+
+  // If it is analytics, find the viz metadata in analytics json.
+  if (/^analytics_/.test(id)) {
+    if (viz.vizs[vizName]) {
+      analyticsName = viz.name;
+      var analyticsDisplayName = viz.displayName;
+      viz = VizUtil.analyticify(viz.vizs[vizName].metadata);
+      // Check both viz.displayName and viz.options.displayName 
+      // for the backward compatibility.
+      vizDisplayName = analyticsDisplayName + " - " + (viz.displayName || viz.options.displayName);
+    } else {
+      // If no metadata found, just set viz to null. 
+      // Usually it shouldn't happen but just in case it happens. #9689
+      viz = null;
+    }
+  }
+
+  var containerWidth = $elem.parent().width();
+
+  // The default body max-width: 782px. 
+  // The default body width including margin: 902px (782 + 60(side margin) * 2), 
+  var FULL_WIDTH_MARGIN_SIDE = screenWidth > 902 ? 60 : 0;  
+  var FULL_HEIGHT_MARGIN_TOP = 10;  
+
+  var isFullHeightMode = false;
+  var isFullWidthMode = false;
+  var isLargeWidthMode = false;
+
+  // User-specified height
+  var userHeightStr = $elem.attr("data-height");
+  var userHeight = null;
+  if (userHeightStr) {
+    if (userHeightStr==="full") {
+      isFullHeightMode = true;
+      userHeight = screenHeight  - FULL_HEIGHT_MARGIN_TOP;
+    } else if (/%$/.test(userHeightStr)) {
+      userHeight = parseInt(userHeightStr.replace("%",""));
+      userHeight = isNaN(userHeight) ? null : (screenHeight * userHeight / 100) - FULL_HEIGHT_MARGIN_TOP;
+    } else {
+      userHeight = parseInt(userHeightStr.replace("px",""));
+      userHeight = isNaN(userHeight) ? null : userHeight;
+    }
+  }
+  // User-specified width
+  var userWidthStr = $elem.attr("data-width");
+  var userWidth = null;
+  if (userWidthStr) {
+    if (userWidthStr==="full") {
+      isFullWidthMode = true;
+      userWidth = screenWidth - FULL_WIDTH_MARGIN_SIDE*2;
+    } else if (userWidthStr==="large") {
+      isLargeWidthMode = true;
+      userWidth = 940;
+    } else if (/%$/.test(userWidthStr)) {
+      userWidth = parseInt(userWidthStr.replace("%",""));
+      userWidth = isNaN(userWidth) ? null : (screenWidth * userWidth / 100) - (FULL_WIDTH_MARGIN_SIDE*2);
+    } else {
+      userWidth = parseInt(userWidthStr.replace("px",""));
+      userWidth = isNaN(userWidth) ? null : userWidth;
+    }
+  }
+  // User-specified border option
+  var userBorderStr = $elem.attr("data-border");
+  // Set the min height. If userHeight is available, just use it. 
+  // If not, try to set a rectangle shape. Use landscape mode If the screen is 
+  // large enough. If small (mobile case), use portrait mode.
+  var minHeight = userHeight || (containerWidth<500 ? containerWidth*8/5 : containerWidth*5/8);
+
+  // Insert a viz canvas div right after the script tag.
+  // If there's already a div there (refresh case), do nothing.
+  var $div = $('div[data-id="div-'+id+'"]');
+  var $outerDiv = $div.parent();
+  if ($div.length === 0) {
+    $div = $("<div>").attr('data-id','div-'+id).css({"min-height":minHeight+"px", "margin-bottom":"38px" }).addClass("viz-container markdown-viz-container")   
+    $outerDiv = $("<div>").addClass("viz-container-outer").append($div);
+    $elem.after($outerDiv);
+  }
+  $div.show();
+
+  // If viz is not available, render no data and exit. 
+  if (!viz) {
+    $div.height(minHeight);
+    VizUtil.renderNoData($div[0], "No chart data found: "+vizName, null, null, lang);
+    // Mark it as rendered.
+    window._vizRenderingStatus[id] = true;  
+    return;
+  } 
+ 
+  // Toolbar
+  var $toolbarDiv = $outerDiv.find('.note-pane-toolbar'), $toolbarOuterDiv = null;
+  if ($toolbarDiv.length === 0) {
+    $toolbarDiv = $('<div class="note-pane-toolbar"/>');
+    $toolbarOuterDiv = $('<div class="note-pane-toolbar-outer"/>');
+    $outerDiv.prepend($toolbarOuterDiv.append($toolbarDiv));
+  }
+  var $toolbarOuterDiv = $toolbarDiv.parent();
+ 
+  // Add a border to table/pivot.
+  // Skip if border="none" is set. 
+  if ( /^(table|pivot|summarytable)$/.test(viz.options.marker) && userBorderStr !== "none") {
+    $div.css({"border-radius":"3px", "border":"1px solid #f0f0f0", "padding":"4px 0px 0px 4px"});
+  }
+  // If plotly viz, add white background color to make viz visible on TOC
+  // if the viz width="full".
+  if (! /^(table|pivot|summarytable|map|maphmap|geojson|easymap)/.test(viz.options.marker)) {
+    $div.css({"background-color": "#ffffff"});
+  }
+
+  var _generateSnapshotCb = function() {
+    window.parent.postMessage(JSON.stringify({action:'SnapshotReady', datauris: window._datauris}),'*');
+  };
+  var $trigger = $("<a>")
+    .attr({'data-id':'a-'+id, vizName, 'data-object-name':objectName})
+    .addClass("viz-snapshot-trigger")
+    .click(_generateSnapshot.bind(
+      null,
+      id,
+      objectName,
+      vizName,
+      _generateSnapshotCb,
+      null/*format*/,
+      null/*useTransparentBackground*/,
+      null/*width*/,
+      null/*height*/,
+      null/*scale*/
+    ));
+
+  $elem.after($trigger);   
+
+  var divWidth  = $div.width(); 
+  var divHeight = $div.height();
+  var width = userWidth ||  divWidth;
+  var height = userHeight || divHeight
+
+  // If no scroll specified for height, not to set hight to let the div 
+  // expand to fit the content without the vertical scrollbar. 
+
+  // allow full height setting only if 
+  // 1. the viz is either pivot or table, or 
+  // 2. plotly chart with repeating.
+  var allowFullHeight = !!viz.options.facet || /^(table|pivot|summarytable)$/.test(viz.options.marker);
+  if (isFullHeightMode && allowFullHeight) {
+    // In case of full height setting, not to specify height. 
+  } else if (!userHeight && VizUtil.isROutput(viz.options.marker)) {
+    // In case of R-based output chart and hight is not specified explicitly 
+    // by user, not to set the height to use the full chart area div width. #14492. 
+  } else {
+    $div.css({'height': height+'px'});
+  }
+
+  $div.css({'width': width+'px'});
+  $toolbarOuterDiv.css({'width': width+'px'});
+
+  // If the width is given by user, adjust the left margin to locate the viz 
+  // in the center. If it is in the full width mode, adjust the margin based 
+  // on the screen size. 
+  if (isFullWidthMode) {
+    var marginLeft = (-1 * ($div.offset().left - FULL_WIDTH_MARGIN_SIDE)) + 'px';
+    $div.css('margin-left', marginLeft);
+    $toolbarOuterDiv.css('margin-left', marginLeft);
+  } else if (isLargeWidthMode) {
+    var marginLeft = 'calc(50% - 470px)';
+    $div.css('margin-left', marginLeft);
+    $toolbarOuterDiv.css('margin-left', marginLeft);
+  } else if (userWidth && userWidth !== divWidth) {
+    var marginLeft = ((userWidth - divWidth) / 2 * -1 ) + 'px';
+    $div.css('margin-left', marginLeft);
+    $toolbarOuterDiv.css('margin-left', marginLeft);
+  }
+
+  // in case of facet, make the viz width a bit smaller for the vert scroll bar. 
+  viz.options.width = (!viz.options.facet ? width : width-20);
+  viz.options.height= height;
+
+  // Render a chart.
+  var $innerDiv = $div.find('> .inner-div');
+  if ($innerDiv.length === 0) {
+    $innerDiv = $('<div class="inner-div" style="width:100%; height:100%">');
+    $div.append($innerDiv);
+  }
+  _renderSingleViz($innerDiv, id, vizName, analyticsName, viz, minHeight);
+
+  // Chart title for the "download" HTML attribute for chart data and image download.
+  var chartTitleForDownload = vizDisplayName.replace('"', "&quot;");
+
+  // Show comment button.
+  var $commentBtn = null, commentHtml = null;
+  if (viz.options.marker !== "singlevalue" && annotation && !document.querySelector('div.show-comment-btn[data-show-comment-id="'+id+'"]')) {
+    var converter = new showdown.Converter();
+    commentHtml = converter.makeHtml(annotation);
+    $commentBtn = $('<div data-show-comment-id="'+id+'" class="show-comment-btn"></div>');
+    $toolbarDiv.append($commentBtn);
+  }
+
+  // Download image button.
+  var $downloadImgMenu = null;
+  if (enableChartImageDownload && VizUtil.isPlotly(viz.options.marker) && !document.querySelector('a[data-image-download-id="'+id+'"]')) {
+    $downloadImgMenu = $('<a data-image-download-id="'+id+'" href="">' + VizUtil.getMessage(lang, "Export Chart Image") + '</a>');
+    $downloadImgMenu.on("click", function(ev){ 
+      ev.preventDefault(); 
+      // Set the chart info to the attributes of the ok button in the download image dialog.
+      $("#download-img-ok-btn").attr({
+        "data-id": id,
+        "data-object-name": objectName,
+        "data-viz-name": vizName,
+        "data-chart-title-for-download": chartTitleForDownload
+      });
+
+      // Use the width/height/scale used in the last export.
+      // Save the width/height/scale for the next export.
+      if (window.localStorage) {
+        var defaultWidth = window.localStorage.getItem("exploratory.viz.width");
+        if (defaultWidth && defaultWidth !== "null") {
+          $("#download-img-width").val(defaultWidth);
+        }
+        var defaultHeight = window.localStorage.getItem("exploratory.viz.height");
+        if (defaultHeight && defaultHeight !== "null") {
+          $("#download-img-height").val(defaultHeight);
+        }
+        // It should always return 3 (300%) for now. #29341. Keep the following line for future reference.
+        //window.localStorage.getItem("exploratory.viz.scale");
+        var defaultScale = "3"; 
+        if (defaultScale && defaultScale !== "null") {
+          $("#download-img-ratio").val(defaultScale);
+        }
+      }
+
+      // Show the download image dialog.
+      document.querySelector("#download-img-modal").showModal();
+    });
+  }
+
+  // Download data button.
+  var $downloadDataMenu = null;
+  if (enableChartDataDownload && viz.options.marker !== "singlevalue" && !document.querySelector('a[data-download-id="'+id+'"]')) {
+    if (openOnDesktop) {
+      $downloadDataMenu = $('<a data-download-id="'+id+'" href="#">' + VizUtil.getMessage(lang, "Export Chart Data") + '</a>');
+      $downloadDataMenu.on("click", function(ev){
+        ev.preventDefault();
+        ev.stopPropagation();
+        window.parent.postMessage(JSON.stringify({action:'DownloadChartData', id: (analyticsName ? analyticsName + "_" : "")+viz.name, downloadFileName: chartTitleForDownload + ".csv", vizName: viz.name, analyticsName: analyticsName}),'*');
+      });
+    } else {
+      // Use download HTML attribute for specifying a filename. 
+      // It will automatically escape/replace punctuation characters.
+      $downloadDataMenu = $('<a data-download-id="'+id+'" href="data/'+ (analyticsName ? analyticsName + "_" : "")+viz.name+'.csv" download="'+ chartTitleForDownload +'.csv">' + VizUtil.getMessage(lang, "Export Chart Data") + '</a>');
+    }
+  }
+
+  // Add download menu dropdown if download is available.
+  if ($downloadImgMenu || $downloadDataMenu) {
+    var $downloadMenuDropdown = $('<div class="download-dropdown-menu"/>');
+    var $anchor = $('<a href="#">\xa0</a>');
+    // Disable the click event.
+    $anchor.on("click", function(ev) { ev.stopPropagation(); ev.preventDefault(); });
+    $downloadMenuDropdown.append($anchor);
+    var $downloadUl = $('<ul>'); 
+    $downloadMenuDropdown.append($downloadUl)
+    if ($downloadImgMenu) {
+      $downloadUl.append($('<li>').append($downloadImgMenu))
+    }
+    if ($downloadDataMenu) {
+      $downloadUl.append($('<li>').append($downloadDataMenu))
+    }
+    $toolbarDiv.append($downloadMenuDropdown);
+  }
+
+  // Full screen view support. 
+  if (viz.options.marker !== "singlevalue") {
+
+    // If the full screen view is open, re-render the chart in the screen too.
+    // This is for resizing handling.
+    var $existingVizDiv = $('div[data-preview-id="'+id+'"]');
+    if ($existingVizDiv.length > 0) {
+      viz.options.width = $existingVizDiv.width();
+      viz.options.height= $existingVizDiv.height();
+      _renderSingleViz($existingVizDiv, id, vizName, analyticsName, viz, null/*minHeight - we don't need this setting in the preview pane. */);
+    } 
+    // Full-screen toggle button.
+    var $fullscBtn = $('div.full-screen-toggle-btn[data-toggle-id="'+id+'"]'); 
+    if ($fullscBtn.length === 0) {
+      $fullscBtn = $('<div data-toggle-id="'+id+'" class="full-screen-toggle-btn" aria-label="' + VizUtil.getMessage(lang, "Show in fullscreen") + '" data-microtip-position="bottom-right" role="tooltip"></div>');
+      $fullscBtn.on("click", function(){
+
+        // Reload the chart metadata for the interactive support on the server. 
+        viz = window[objectName];
+        annotation = viz.annotation;
+        // If it is analytics, find the viz metadata in analytics json.
+        if (/^analytics_/.test(id)) {
+          if (viz.vizs[vizName]) {
+            analyticsName = viz.name;
+            viz = VizUtil.analyticify(viz.vizs[vizName].metadata);
+          } else {
+            // If no metadata found, just set viz to null. 
+            // Usually it shouldn't happen but just in case it happens. #9689
+            viz = null;
+          }
+        }
+
+        var toggleId = $(this).attr("data-toggle-id");
+        var $fullscDiv = $('<div class="full-screen-pane viz-container"></div>');
+        var $vizDiv = $('<div data-preview-id="'+toggleId+'" class="full-screen-pane-inner"></div>');
+        var $closeBtn = $('<div class="full-screen-close-btn"></div>');
+        $closeBtn.on("click", function(){
+          // Get back the original width and height.
+          viz.options.width = viz.options._width;
+          viz.options.height = viz.options._height;
+          // Remove the full-screen dialog.
+          $fullscDiv.remove();
+        });
+        $fullscDiv.append($vizDiv);
+        $fullscDiv.append($closeBtn);
+        $(document.body).append($fullscDiv);
+
+        // Remenber the current width/height. 
+        // We will get it back once the full-screen mode is closed.
+        viz.options._width = viz.options.width;
+        viz.options._height = viz.options.height;
+
+        viz.options.width = $vizDiv.width();
+        viz.options.height= $vizDiv.height();
+        // Render a chart.
+        _renderSingleViz($vizDiv, id, vizName, analyticsName, viz);
+        // Update the links in the chart in the full-screen view.
+        _enableLinks();
+      });
+      $toolbarDiv.append($fullscBtn);
+    }
+  }
+
+  // Init show comment balloon.
+  // We should do this once all the buttons are added to the toolbar
+  // because the balloon alignment depends on the width of the toolbar.
+  if ($commentBtn) {
+    $commentBtn.balloon({
+      contents: '<div class="title-area">'+VizUtil.getMessage(lang, "Comment")+'</div><div class="body-area">' + commentHtml + '</div>',
+      html: true,
+      position: "bottom right",
+      classname: "comment-balloon",
+      minLifetime: 0, showDuration: 0, hideDuration: 0,
+      css: {
+        transform: "translate(-26px, 5px)",
+        border: "1px solid #ddd",
+        borderRadius: "2px",
+        padding: "10px 16px",
+        fontSize: "14px",
+        fontWeight: "normal",
+        backgroundColor: "#fff",
+        color: "#666",
+        boxShadow: "none",
+        minWidth: "200px",
+        zIndex: "1100",
+        whiteSpace: "pre-wrap",
+        borderRadius: "6px",
+        opacity: "1",
+        maxWidth: Math.min(400, ($div.outerWidth() - 20)) + "px",
+      },
+    });
+}
+
+  // Mark it as rendered.
+  window._vizRenderingStatus[id] = true;
+  _enableLinks();
+  window.parent.postMessage(JSON.stringify({action:'SetRenderingStatus', renderingStatus: window._vizRenderingStatus}),'*');
+}
+
+// Track the viz rendering status. 
+window._vizRenderingStatus = {};
+
+// Render charts.
+window._renderViz = function(){
+  $vizs.each(function(index) {
+    window._vizRenderingStatus[$(this).attr("data-id")] = false;
+    setTimeout(_renderVizPanel.bind(this) ,50);
+  });
+};
+
+// Show loading messages on charts. 
+window._showLoading = function(){
+  $vizs.each(function(index) {
+    var dataId = $(this).attr("data-id");
+    $('.viz-loading[data-id="'+dataId+'"]').show();
+    $('div[data-id="div-'+dataId+'"]').hide();
+  });
+};
+
+// Reload chart metadata. Used in Interactive mode.
+window._reloadMetadata = function(baseUrl){
+  // Save the base URL to the window object 
+  // for R-based chart output rendering later.
+  if (baseUrl) {
+    window._baseUrl = 
+      window.location.protocol + 
+      "//" + 
+      window.location.host + 
+      baseUrl;
+  }
+  var cb = "?cb=" + Date.now();
+  $vizs.each(function(index) {
+    var analyticsId = $(this).attr("data-analysis"),
+      vizId = $(this).attr("data-viz"),
+      url = "";
+    if (analyticsId) {
+      url = baseUrl+"/note_content/libs/exploratory/analytics/"+analyticsId+".js" + cb;
+    } else {
+      url = baseUrl+"/note_content/libs/exploratory/layout/"+vizId+".js" + cb;
+    }
+    $(document.body).append('<script src="'  + url +'" />');
+  });
+};
+
+// Render charts at loading time. 
+window._renderViz();
+
+
+</script>
+<!-- END: Exploratory custom footer -->
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+
+</body>
+</html>
